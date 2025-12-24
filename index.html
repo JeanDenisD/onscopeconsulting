@@ -6,128 +6,90 @@
   <title>On-Scope Consulting</title>
   <style>
     :root{
-      --bg:#0a0f1c;
-      --card:#0f172a;
-      --text:#eef2ff;
-      --muted:#b7c0de;
-      --a:#22c55e;  /* green */
-      --b:#06b6d4;  /* cyan */
-      --c:#f59e0b;  /* amber */
-      --line:rgba(255,255,255,.10);
-      --r:20px;
-      --max:1040px;
+      --bg:#0b0e14;
+      --card:#0f1522;
+      --text:#f2f5ff;
+      --muted:#c1c9e3;
+      --line:rgba(255,255,255,.12);
+      --accent:#60a5fa;
+      --radius:18px;
+      --max:920px;
     }
     *{box-sizing:border-box}
     body{
-      margin:0; color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:
-        radial-gradient(900px 500px at 10% 0%, rgba(6,182,212,.22), transparent 60%),
-        radial-gradient(900px 500px at 95% 10%, rgba(245,158,11,.18), transparent 55%),
-        radial-gradient(800px 520px at 50% 100%, rgba(34,197,94,.18), transparent 60%),
-        linear-gradient(180deg, var(--bg), #070a12 70%);
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: linear-gradient(180deg, var(--bg), #06070b 70%);
+      color:var(--text);
+      line-height:1.6;
     }
-    .wrap{max-width:var(--max); margin:0 auto; padding:48px 18px 68px}
-    .nav{
-      display:flex; justify-content:space-between; align-items:center; gap:14px;
-      margin-bottom:24px;
-    }
-    .name{font-weight:800; letter-spacing:.4px}
-    .chips{display:flex; gap:8px; flex-wrap:wrap}
-    .chip{border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.04)}
-    .hero{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:28px; padding:36px 24px;
-    }
-    h1{margin:0 0 8px; font-size:40px; line-height:1.05}
-    p{margin:0; color:var(--muted)}
-    .row{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
-    .btn{
-      padding:10px 14px; border-radius:14px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04); color:var(--text); text-decoration:none; font-size:13px;
-      display:inline-flex; align-items:center; gap:10px;
-    }
-    .btn.primary{
-      border:0;
-      background: linear-gradient(135deg, rgba(6,182,212,.95), rgba(34,197,94,.95));
-      color:#061219; font-weight:800;
-    }
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px; margin-top:18px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:44px 16px 60px}
     .card{
-      grid-column:span 6; border:1px solid var(--line); border-radius:var(--r);
-      background:rgba(255,255,255,.04); padding:18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 18px;
     }
-    .card h3{margin:0 0 6px; font-size:14px}
-    .card p{font-size:13px}
-    .badge{display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--muted); margin-bottom:10px}
-    .dot{width:9px; height:9px; border-radius:99px; background:var(--b)}
-    .dot.g{background:var(--a)}
-    .dot.o{background:var(--c)}
-    .foot{
-      margin-top:18px; border-top:1px solid var(--line); padding-top:14px;
-      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    h1{margin:0 0 8px; font-size:28px}
+    h2{margin:18px 0 8px; font-size:16px}
+    p,li{color:var(--muted); font-size:14px}
+    a{color:var(--accent); text-decoration:none}
+    .top{
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;
       color:var(--muted); font-size:12px;
     }
-    @media(max-width:900px){ h1{font-size:32px} .card{grid-column:span 12} }
+    .tag{border:1px solid var(--line); border-radius:999px; padding:6px 10px; background:rgba(255,255,255,.04)}
+    ul{margin:8px 0 0; padding-left:18px}
+    .cta{
+      margin-top:14px; display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:10px 12px; border-radius:12px;
+      font-size:13px; color:var(--text); text-decoration:none;
+    }
+    .btn.primary{border-color:rgba(96,165,250,.45)}
+    footer{margin-top:14px; font-size:12px; color:var(--muted)}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="nav">
-      <div class="name">On-Scope Consulting</div>
-      <div class="chips">
-        <span class="chip">AI Assistants</span>
-        <span class="chip">n8n Automation</span>
-        <span class="chip">Regulatory & Data</span>
-        <span class="chip">Sovereign-first</span>
-      </div>
+    <div class="top">
+      <div class="tag">On-Scope Consulting</div>
+      <div class="tag">Automation • AI Assistants • Sovereign-first</div>
     </div>
 
-    <section class="hero">
-      <h1>Automation & assistants conversationnels<br/>pour les opérations réelles.</h1>
+    <div class="card">
+      <h1>On-Scope Consulting</h1>
       <p>
-        On-Scope Consulting construit des solutions pragmatiques : agents WhatsApp, orchestration n8n,
-        intégrations Google Workspace / APIs, et architecture RAG quand c’est pertinent.
+        Consulting & développement logiciel : automatisation de processus (n8n), intégration d’APIs,
+        assistants conversationnels (WhatsApp / web) et solutions IA (RAG) lorsque pertinent.
       </p>
 
-      <div class="row">
+      <div class="cta">
         <a class="btn primary" href="mailto:jeandenis@onscopeconsulting.com">Contact : jeandenis@onscopeconsulting.com</a>
-        <a class="btn" href="#offer">Offre</a>
-        <a class="btn" href="#sovereignty">Souveraineté</a>
+        <a class="btn" href="#services">Services</a>
+        <a class="btn" href="#principes">Principes</a>
       </div>
 
-      <div id="offer" class="grid">
-        <div class="card">
-          <div class="badge"><span class="dot"></span> WhatsApp Agent (OSCANA)</div>
-          <h3>Messagerie → réponses + actions</h3>
-          <p>Répondre, qualifier, déclencher une tâche : devis, réservation, suivi, relance.</p>
-        </div>
+      <h2 id="services">Services</h2>
+      <ul>
+        <li><strong>Agents conversationnels</strong> : WhatsApp, routage, FAQ, actions (devis, réservations, suivi).</li>
+        <li><strong>Automatisation</strong> : workflows n8n, notifications, génération de documents, monitoring.</li>
+        <li><strong>Data & conformité</strong> : cadrage, mapping, contrôles, reporting et documentation.</li>
+      </ul>
 
-        <div class="card">
-          <div class="badge"><span class="dot g"></span> Workflows & automatisation</div>
-          <h3>n8n + intégrations API</h3>
-          <p>Automatisation robuste, monitoring, logs, génération de documents & notifications.</p>
-        </div>
+      <h2 id="principes">Principes</h2>
+      <ul>
+        <li><strong>Souveraineté</strong> : données maîtrisées, séparation des contextes, réversibilité.</li>
+        <li><strong>Modularité</strong> : composants réutilisables, intégrations propres, documentation claire.</li>
+        <li><strong>Pragmatisme</strong> : focus sur l’usage et la robustesse opérationnelle.</li>
+      </ul>
 
-        <div class="card">
-          <div class="badge"><span class="dot o"></span> Data & conformité</div>
-          <h3>Projets réglementaires & industrialisation</h3>
-          <p>Mapping, contrôles, formats & reporting. Livrables actionnables et documentés.</p>
-        </div>
-
-        <div class="card" id="sovereignty">
-          <div class="badge"><span class="dot"></span> Sovereign-first</div>
-          <h3>Maîtrise des données</h3>
-          <p>Approche modulaire, séparation des contextes, réversibilité, self-hosting quand nécessaire.</p>
-        </div>
-      </div>
-
-      <div class="foot">
-        <div>© On-Scope Consulting</div>
-        <div><a href="mailto:jeandenis@onscopeconsulting.com" style="color:inherit;text-decoration:none;">jeandenis@onscopeconsulting.com</a></div>
-      </div>
-    </section>
+      <footer>
+        © On-Scope Consulting — <a href="mailto:jeandenis@onscopeconsulting.com">jeandenis@onscopeconsulting.com</a>
+      </footer>
+    </div>
   </div>
 </body>
 </html>
