@@ -1,181 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>On-Scope Consulting</title>
   <style>
     :root{
-      --bg:#0b1220;         /* navy */
-      --card:#0f1a2f;
-      --text:#e9eefc;
-      --muted:#a9b4d0;
-      --accent:#38bdf8;     /* sky */
-      --accent2:#a78bfa;    /* violet */
+      --bg:#0a0f1c;
+      --card:#0f172a;
+      --text:#eef2ff;
+      --muted:#b7c0de;
+      --a:#22c55e;  /* green */
+      --b:#06b6d4;  /* cyan */
+      --c:#f59e0b;  /* amber */
       --line:rgba(255,255,255,.10);
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 22px;
-      --max: 980px;
+      --r:20px;
+      --max:1040px;
     }
     *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      margin:0; color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       background:
-        radial-gradient(900px 500px at 20% -10%, rgba(56,189,248,.25), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.20), transparent 55%),
-        linear-gradient(180deg, var(--bg), #070b14 70%);
-      color:var(--text);
-      line-height:1.55;
+        radial-gradient(900px 500px at 10% 0%, rgba(6,182,212,.22), transparent 60%),
+        radial-gradient(900px 500px at 95% 10%, rgba(245,158,11,.18), transparent 55%),
+        radial-gradient(800px 520px at 50% 100%, rgba(34,197,94,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg), #070a12 70%);
     }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:42px 18px 64px}
-    .top{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      margin-bottom:28px;
+    .wrap{max-width:var(--max); margin:0 auto; padding:48px 18px 68px}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center; gap:14px;
+      margin-bottom:24px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      letter-spacing:.2px;
-    }
-    .logo{
-      width:44px; height:44px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(56,189,248,.9), rgba(167,139,250,.9));
-      box-shadow: 0 10px 30px rgba(56,189,248,.15);
-    }
-    .brand h1{margin:0; font-size:16px; font-weight:700}
-    .pill{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      padding:8px 12px; border-radius:999px;
-      font-size:12px; color:var(--muted);
-    }
+    .name{font-weight:800; letter-spacing:.4px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.04)}
     .hero{
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:34px 26px;
+      border-radius:28px; padding:36px 24px;
     }
-    .hero h2{
-      margin:0 0 10px; font-size:34px; line-height:1.12;
-    }
-    .hero p{margin:0 0 18px; color:var(--muted); font-size:15px; max-width:70ch}
-    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    h1{margin:0 0 8px; font-size:40px; line-height:1.05}
+    p{margin:0; color:var(--muted)}
+    .row{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
     .btn{
+      padding:10px 14px; border-radius:14px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04); color:var(--text); text-decoration:none; font-size:13px;
       display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      font-size:13px; color:var(--text);
     }
     .btn.primary{
       border:0;
-      background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(167,139,250,.95));
-      color:#06101f;
-      font-weight:700;
+      background: linear-gradient(135deg, rgba(6,182,212,.95), rgba(34,197,94,.95));
+      color:#061219; font-weight:800;
     }
-    .grid{
-      display:grid; gap:14px;
-      grid-template-columns: repeat(12, 1fr);
-      margin-top:16px;
-    }
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px; margin-top:18px}
     .card{
-      grid-column: span 6;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: var(--radius);
-      padding:18px 18px;
+      grid-column:span 6; border:1px solid var(--line); border-radius:var(--r);
+      background:rgba(255,255,255,.04); padding:18px;
     }
     .card h3{margin:0 0 6px; font-size:14px}
-    .card p{margin:0; color:var(--muted); font-size:13px}
-    .list{margin:10px 0 0; padding-left:16px; color:var(--muted); font-size:13px}
-    .footer{
-      margin-top:18px;
-      color:var(--muted);
-      font-size:12px;
-      display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
-      padding-top:16px;
-      border-top:1px solid var(--line);
+    .card p{font-size:13px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--muted); margin-bottom:10px}
+    .dot{width:9px; height:9px; border-radius:99px; background:var(--b)}
+    .dot.g{background:var(--a)}
+    .dot.o{background:var(--c)}
+    .foot{
+      margin-top:18px; border-top:1px solid var(--line); padding-top:14px;
+      display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+      color:var(--muted); font-size:12px;
     }
-    @media (max-width: 820px){
-      .hero h2{font-size:28px}
-      .card{grid-column: span 12}
-    }
+    @media(max-width:900px){ h1{font-size:32px} .card{grid-column:span 12} }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>On-Scope Consulting</h1>
-          <div class="pill">Automation • AI Assistants • Regulatory delivery • Sovereign-first</div>
-        </div>
+    <div class="nav">
+      <div class="name">On-Scope Consulting</div>
+      <div class="chips">
+        <span class="chip">AI Assistants</span>
+        <span class="chip">n8n Automation</span>
+        <span class="chip">Regulatory & Data</span>
+        <span class="chip">Sovereign-first</span>
       </div>
-      <div class="pill">France • Remote-friendly</div>
     </div>
 
     <section class="hero">
-      <h2>Automatisations & agents conversationnels, pensés pour durer.</h2>
+      <h1>Automation & assistants conversationnels<br/>pour les opérations réelles.</h1>
       <p>
-        On-Scope Consulting conçoit des solutions de bout en bout : workflows d’automatisation (n8n),
-        assistants conversationnels (WhatsApp / web), et systèmes RAG/IA — avec une approche pragmatique
-        et <strong>orientée souveraineté</strong> (données maîtrisées, architecture modulaire).
+        On-Scope Consulting construit des solutions pragmatiques : agents WhatsApp, orchestration n8n,
+        intégrations Google Workspace / APIs, et architecture RAG quand c’est pertinent.
       </p>
 
-      <div class="ctaRow">
+      <div class="row">
         <a class="btn primary" href="mailto:jeanddenis@onscopeconsulting.com">Contact : jeanddenis@onscopeconsulting.com</a>
-        <a class="btn" href="#services">Voir les services</a>
-        <a class="btn" href="#principes">Principes</a>
+        <a class="btn" href="#offer">Offre</a>
+        <a class="btn" href="#sovereignty">Souveraineté</a>
       </div>
 
-      <div id="services" class="grid">
+      <div id="offer" class="grid">
         <div class="card">
-          <h3>Agents & messagerie (WhatsApp, Slack…)</h3>
-          <p>Assistants qui répondent, qualifient et déclenchent des actions (devis, réservations, suivi).</p>
-          <ul class="list">
-            <li>Onboarding, templates, webhooks</li>
-            <li>Intégration n8n + CRM / Google Workspace</li>
-            <li>Journalisation & traçabilité</li>
-          </ul>
+          <div class="badge"><span class="dot"></span> WhatsApp Agent (OSCANA)</div>
+          <h3>Messagerie → réponses + actions</h3>
+          <p>Répondre, qualifier, déclencher une tâche : devis, réservation, suivi, relance.</p>
         </div>
 
         <div class="card">
-          <h3>Automatisation & data pipelines</h3>
-          <p>Orchestration fiable : extraction, transformation, génération de documents, alerting.</p>
-          <ul class="list">
-            <li>n8n / APIs / scripts TypeScript & Python</li>
-            <li>Workflows robustes + monitoring</li>
-            <li>Docs & handover</li>
-          </ul>
+          <div class="badge"><span class="dot g"></span> Workflows & automatisation</div>
+          <h3>n8n + intégrations API</h3>
+          <p>Automatisation robuste, monitoring, logs, génération de documents & notifications.</p>
         </div>
 
         <div class="card">
-          <h3>Réglementaire & process banking/fintech</h3>
-          <p>Projets de conformité et industrialisation (ISO 20022, reporting, automatisation).</p>
-          <ul class="list">
-            <li>Analyse & cadrage</li>
-            <li>Mapping & contrôles</li>
-            <li>Livrables exécutables</li>
-          </ul>
+          <div class="badge"><span class="dot o"></span> Data & conformité</div>
+          <h3>Projets réglementaires & industrialisation</h3>
+          <p>Mapping, contrôles, formats & reporting. Livrables actionnables et documentés.</p>
         </div>
 
-        <div class="card" id="principes">
-          <h3>Principes : souveraineté & modularité</h3>
-          <p>Priorité à la maîtrise : séparation des données, choix d’hébergement, réversibilité.</p>
-          <ul class="list">
-            <li>Architecture “Sovereign Vault” (Obsidian / RAG / agents)</li>
-            <li>Open-source quand possible, SaaS quand nécessaire</li>
-            <li>Design orienté sécurité & conformité</li>
-          </ul>
+        <div class="card" id="sovereignty">
+          <div class="badge"><span class="dot"></span> Sovereign-first</div>
+          <h3>Maîtrise des données</h3>
+          <p>Approche modulaire, séparation des contextes, réversibilité, self-hosting quand nécessaire.</p>
         </div>
       </div>
 
-      <div class="footer">
-        <div>© On-Scope Consulting — Automation & AI</div>
-        <div>Email : <a href="mailto:jeanddenis@onscopeconsulting.com">jeanddenis@onscopeconsulting.com</a></div>
+      <div class="foot">
+        <div>© On-Scope Consulting</div>
+        <div><a href="mailto:jeanddenis@onscopeconsulting.com" style="color:inherit;text-decoration:none;">jeanddenis@onscopeconsulting.com</a></div>
       </div>
     </section>
   </div>
